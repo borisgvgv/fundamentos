@@ -1,6 +1,7 @@
 // Es recomendable poner nombre de la clase con la primera letra en mayúscula
 
 class Persona {
+  //Propiedades de la clase
   nombre = '';
   codigo = '';
   frase = '';
