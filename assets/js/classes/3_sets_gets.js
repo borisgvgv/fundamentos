@@ -2,10 +2,10 @@
 
 class Persona {
   //Propiedades de la clase
-  nombre = '';
-  codigo = '';
-  frase = '';
-  comida = '';
+  // nombre = '';
+  // codigo = '';
+  // frase = '';
+  // comida = '';
 
   constructor(
     nombre = 'Sin nombre',
@@ -20,6 +20,7 @@ class Persona {
     this.frase = frase;
   }
 
+  //El set puede recibir varios argumentos pero es conveniente que reciba solo un argumento
   set setComidaFavorita(comida) {
     this.comida = comida.toUpperCase();
   }
@@ -49,10 +50,10 @@ persona_1.setComidaFavorita = 'El pie de cerezas de la tía May';
 // persona_1.nemesis = "Duende verde";
 // persona_1.colorOjos = "Negros"
 
+console.warn('Console.log directos');
 console.log(persona_1);
 console.log(persona_2);
 console.log(persona_3);
-
 console.log(persona_1.getComidaFavorita);
 
 // Devolución de métodos
