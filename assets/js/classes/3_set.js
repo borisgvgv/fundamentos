@@ -1,25 +1,24 @@
 class Person {
-  constructor() {
-    this._name = 'Rita';
+  constructor(name) {
+    this._name = name;
   }
 
-  set name(value) {
+  set setname(value) {
     this._name = value.toUpperCase();
   }
 
-  get name() {
-    return this._name;
+  get getname() {
+    return `Nombre: ${this._name}`;
   }
 }
 
-const person = new Person();
-person.name = 'Boris'; // Using the setter to set the 'name' property
+const person = new Person('Boris');
+console.log(person.getname);
 
-console.log(person.name);
-
+person.setname = 'Boris'; // Using the setter to set the 'name' property
+console.log(person.getname);
 
 //// ----------------------------------------------------------------
-
 
 class Persona {
   constructor(nombre, apellido) {
@@ -27,48 +26,58 @@ class Persona {
     this._apellido = apellido;
   }
 
-  set nombreCompleto(nombreCompleto) {
-    const nombres = nombreCompleto.split(' ');
-    this._nombre = nombres[0];
-    this._apellido = nombres[1];
+  set setNombreCompleto(valor) {
+    const nombres = valor.split(' ');
+    this._nombre = nombres[0].toUpperCase();
+    this._apellido = nombres[1].toUpperCase();
+    this._segundoApellido = nombres[2];
   }
 
-  get nombreCompleto() {
-    return this._nombre + ' ' + this._apellido;
+  get getNombreCompleto() {
+    return (
+      this._nombre.toUpperCase() +
+      ' ' +
+      this._apellido +
+      ' ' +
+      this._segundoApellido
+    );
   }
 }
 
-// La constante persona toma en valos de "new Persona('Juan', 'Pérez')"
 const persona = new Persona('Juan', 'Pérez');
-console.log(persona.nombreCompleto); // Muestra "Juan Pérez"
+console.log(persona.getNombreCompleto); // Muestra "Juan Pérez"
 
-// Cambiamos el valor de la constante persona.nombreCompleto
-persona.nombreCompleto = 'María García';
-console.log(persona.nombreCompleto); // Muestra "María García"
+persona.setNombreCompleto = 'María García Dominguez';
+console.log(persona.getNombreCompleto); // Muestra "María García"
 
 //    -----------------------
 
-// class Trabajador {
-//   constructor(nombre, ocupacion) {
-//     this._nombre = nombre;
-//     this._ocupacion = ocupacion;
-//   }
+class Trabajador {
+  constructor(nombre, ocupacion, edad = '') {
+    this._nombre = nombre;
+    this._ocupacion = ocupacion;
+    this._edad = edad;
+  }
 
-//   // set settrabajador(trabajador) {
-//   //   const edad = trabajador;
-//   //   this.edad = edad;
-//   // }
+  set settrabajador(valor) {
+    const edad = valor;
+    this._edad = edad;
+  }
 
-//   get gettrabajador() {
-//     return `Nombre: ${this._nombre}, Ocupación: ${this._ocupacion}`;
-//   }
-// }
+  get gettrabajador() {
+    if (!this._edad || this._edad <= 15) {
+      return `Nombre: ${this._nombre}, Ocupación: ${this._ocupacion}`;
+    } else {
+      return `Nombre: ${this._nombre}, Ocupación: ${this._ocupacion}, Edad: ${this._edad} `;
+    }
+  }
+}
 
-// const trabajador_1 = new Trabajador('Boris', 'Mecánico');
-// console.log(trabajador_1.gettrabajador);
+const trabajador_1 = new Trabajador('Boris', 'Mecánico', 50);
+const trabajador_2 = new Trabajador('Boris', 'Chapista');
+console.log(trabajador_1.gettrabajador);
 
-// trabajador_1.gettrabajador = '45';
-// console.log(trabajador_1.gettrabajador);
+trabajador_2.settrabajador = '17';
+console.log(trabajador_2.gettrabajador);
 
 ////       -----------------------
-
