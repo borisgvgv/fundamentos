@@ -14,6 +14,11 @@ console.log(miCirculo.area); // Calcula y devuelve el área del círculo
 //---------------Ejemplo 2
 
 class Person {
+  //Propiedades de la clase / pueden estar o no.
+  //   nombre = '';
+  //   edad = '';
+  //   nacionalidad = '';
+
   constructor(nombre, edad, nacionalidad) {
     this._nombre = nombre;
     this._edad = edad;
