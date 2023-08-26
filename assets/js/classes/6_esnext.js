@@ -18,6 +18,6 @@ class Rectangulo {
 // creamos instancia de la clase
 const rectangulo = new Rectangulo(10, 15);
 
-// rectangulo.#area= 100;
+// rectangulo.#area= 100; // No se puede modificar porque es un método privado modificable solo desde la clase. 
 console.log(rectangulo);
 rectangulo.duplicarArea();

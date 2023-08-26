@@ -77,7 +77,8 @@ const trabajador_1 = new Trabajador('Boris', 'Mecánico', 50);
 const trabajador_2 = new Trabajador('Boris', 'Chapista');
 console.log(trabajador_1.gettrabajador);
 
-trabajador_2.settrabajador = '17';
+trabajador_2.settrabajador = '15';
 console.log(trabajador_2.gettrabajador);
+
 
 ////       -----------------------

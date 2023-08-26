@@ -1,13 +1,13 @@
 class Persona {
   //campos opcionales
-  static instancia;
-  nombre = "";
+  static instancia; // undefine
+  nombre = '';
 
-  constructor(nombre = "") {
+  constructor(nombre = '') {
     // console.log(Persona.instancia);//undefined
 
-    if(!!Persona.instancia){
-        return Persona.instancia;
+    if (!!Persona.instancia) {
+      return Persona.instancia;
     }
     Persona.instancia = this;
     this.nombre = nombre;
