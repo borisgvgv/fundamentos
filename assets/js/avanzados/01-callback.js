@@ -10,7 +10,8 @@ function realizarOperacion(a, b, operacion, callback) {
   } else if (operacion === 'division') {
     resultado = a / b;
   } else {
-    return callback('Operación no válida', a, b, operacion, null);
+    callback('Operación no válida', a, b, operacion, null);
+    return;
   }
 
   callback(null, a, b, operacion, resultado);
@@ -29,6 +30,7 @@ function mostrarResultado(error, a, b, operacion, resultado) {
 realizarOperacion(10, 5, 'suma', mostrarResultado);
 realizarOperacion(20, 4, 'division', mostrarResultado);
 realizarOperacion(8, 3, 'potencia', mostrarResultado);
+realizarOperacion(80, 3, 'multiplicacion', mostrarResultado);
 
 /* En este ejemplo, la función "realizarOperacion" realiza
  diferentes operaciones matemáticas (suma, resta, multiplicación y división)
