@@ -11,7 +11,7 @@ function realizarOperacion(a, b, operacion, callback) {
     resultado = a / b;
   } else {
     callback('Operación no válida', a, b, operacion, null);
-    return;
+    return; // detiene la ejecución de la función y regresa undefined
   }
 
   callback(null, a, b, operacion, resultado);
